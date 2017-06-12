@@ -51,7 +51,7 @@ public class strStr {
                 }
             }
         }
-        
+
         return  -1;
 
     }
