@@ -9,14 +9,14 @@ public class strStr {
         String source = "tartarget";
         String target = "t6";
 
-        strStr strFetch = new strStr();
+        tl_strstr.strStr strFetch = new tl_strstr.strStr();
         int result = strFetch.strFetch(source,target);
 
         System.out.print(result);
 
     }
 
-    public int strFetch(String source,String target){
+    private int strFetch(String source,String target){
         if(source == null || target == null || target.length() > source.length()){
             return  -1;
         }else if (target.length() == 0) {
