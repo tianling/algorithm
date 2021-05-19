@@ -62,7 +62,7 @@ public class ReverseList {
             return head;
         }
 
-        ListNode p = solutionByRecursion(head);
+        ListNode p = solutionByRecursion(head.next);
         head.next.next = head;
         head.next = null;
         return p;
