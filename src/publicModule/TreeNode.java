@@ -3,7 +3,7 @@ package publicModule;
 import java.util.ArrayList;
 import java.util.List;
 
-public static class TreeNode {
+public class TreeNode {
    int val;
    TreeNode left;
    TreeNode right;
