@@ -23,15 +23,15 @@ public class TreeNode {
       }
      
       for (int i = 0; i < initArr.size() / 2 - 1; i++) {
-          treeNodes.get(i).leftNode = treeNodes.get(i * 2 + 1);
-          treeNodes.get(i).rightNode = treeNodes.get(i * 2 + 2);
+          treeNodes.get(i).left = treeNodes.get(i * 2 + 1);
+          treeNodes.get(i).right = treeNodes.get(i * 2 + 2);
       }
 
       int parentIndex = initArr.size() / 2 - 1;
-      treeNodes.get(parentIndex).leftNode = treeNodes.get(parentIndex * 2 + 1);
+      treeNodes.get(parentIndex).left = treeNodes.get(parentIndex * 2 + 1);
 
       if (initArr.size() % 2 == 1) {
-          treeNodes.get(parentIndex).rightNode = treeNodes.get(parentIndex * 2 + 2);
+          treeNodes.get(parentIndex).right = treeNodes.get(parentIndex * 2 + 2);
       }
       
       return treeNodes;
