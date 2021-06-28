@@ -1,7 +1,9 @@
 package publicModule;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class TreeNode {
    int val;
@@ -35,5 +37,45 @@ public class TreeNode {
       }
       
       return treeNodes;
+   }
+
+    public static TreeNode createAnyTreeByArr(Integer [] arr) {
+      Queue<Integer> queueNum = new LinkedList<>();
+      for (Integer i : arr) {
+         queueNum.add(i);
+      }
+
+      if (queueNum.isEmpty()) {
+         return null;
+      }
+
+      TreeNode root = new TreeNode(queueNum.poll());
+      Queue<TreeNode> queueNode = new LinkedList<>();
+      queueNode.offer(root);
+
+      while (!queueNum.isEmpty() && !queueNode.isEmpty()) {
+         TreeNode tmp = queueNode.poll();
+         if (null != tmp) {
+            Integer left = queueNum.poll();
+            Integer right = queueNum.poll();
+
+            if (left != null) {
+               tmp.left = new TreeNode(left);
+            }
+
+            if (right != null) {
+               tmp.right = new TreeNode(right);
+            }
+            if (null != left) {
+               queueNode.offer(tmp.left);
+            }
+
+            if (null != right) {
+               queueNode.offer(tmp.right);
+            }
+         }
+      }
+
+      return root;
    }
 }
