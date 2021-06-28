@@ -5,7 +5,7 @@ package jz_strstr;
  */
 public class strStr {
     public static void main(String args[]){
-        String source = "tartarget";
+        String source = "tartarget11111";
         String target = "t6";
 
         strStr strFetch = new strStr();
