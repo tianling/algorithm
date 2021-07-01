@@ -5,13 +5,13 @@ package jz_strstr;
  */
 public class strStr {
     public static void main(String args[]){
-        String source = "tartarget11111";
-        String target = "t6";
+        String source = "a";
+        String target = "a";
 
         strStr strFetch = new strStr();
         int result = strFetch.strFetch(source,target);
 
-        System.out.print(result);
+        System.out.println(result);
 
     }
 
@@ -24,15 +24,17 @@ public class strStr {
         for (int i = 0; i < source.length() - target.length() + 1; i++) {
             int j;
             for (j = 0; j < target.length(); j++) {
-                if (source.charAt(i + j) != target.charAt(j)) {
+                if (source.charAt(j + i) != target.charAt(j)) {
                     break;
                 }
             }
-            // finished loop, target found
+
             if (j == target.length()) {
                 return i;
             }
+
         }
+
         return -1;
 
     }
